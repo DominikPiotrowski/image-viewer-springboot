@@ -21,9 +21,9 @@ public class PhotoHandling {
         this.photoRepository = photoRepository;
 
         cloudinary = new Cloudinary(ObjectUtils.asMap(
-                "cloud_name", "x",
-                "api_key", "x",
-                "api_secret", "x"
+                "cloud_name", "",
+                "api_key", "",
+                "api_secret", ""
         ));
     }
 

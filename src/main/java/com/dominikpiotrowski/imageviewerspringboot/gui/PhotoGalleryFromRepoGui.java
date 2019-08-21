@@ -15,7 +15,7 @@ public class PhotoGalleryFromRepoGui extends VerticalLayout {
     private PhotoRepository photoRepository;
 
     @Autowired
-    public PhotoGalleryFromRepoGui(PhotoRepository photoRepository) {
+    public PhotoGalleryFromRepoGui(){
         this.photoRepository = photoRepository;
 
         List<Photo> photoList = photoRepository.findAll();
@@ -23,9 +23,8 @@ public class PhotoGalleryFromRepoGui extends VerticalLayout {
         photoList
                 .stream()
                 .forEach(pic -> {
-                    Image image = new Image(pic.getPhotoAddress(), "no photo avaliable");
-                    image.setWidth("300");
-                    image.setHeight("300");
+                    Image image = new Image(pic.getPhotoAddress(), "no image avaliable");
+                    image.setWidth("20%");
                     add(image);
                 });
     }

@@ -4,6 +4,7 @@ import com.dominikpiotrowski.imageviewerspringboot.cloudinary.PhotoHandling;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.H4;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
@@ -28,7 +29,9 @@ public class PhotoUploadGui extends VerticalLayout {
         {
             String uploadedPic = imageUpload.uploadAndSaveToRepo(url.getValue());
             success.setText("Upload complete.");
-            add(success);
+            Image image = new Image(uploadedPic, "no picture avaliable");
+            image.setWidth("20%");
+            add(success, image);
         });
 
         setAlignItems(Alignment.CENTER);
